@@ -3,517 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propuesta de Boda - Casa Yagüe</title>
+    <title>Silvina & Martín — Una Boda Íntima en Casa Yagüe</title>
+    
+    <!-- Google Fonts: Cormorant Garamond (Serif editorial) & Jost (Sans-serif minimalista) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1a2f23;
-            --secondary: #c5a368;
-            --accent: #d4e0d9;
-            --text: #2c2c2c;
-            --bg: #fdfbf7;
-            --white: #ffffff;
-            --shadow: 0 20px 40px rgba(0,0,0,0.08);
-            --glass: rgba(255, 255, 255, 0.8);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .timeline-content-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('hero.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--white);
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin-bottom: 20px;
-        }
-
-        .hero .date {
-            font-size: 1.5rem;
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-        }
-
-        /* Sections */
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .divider {
-            width: 80px;
-            height: 2px;
-            background: var(--secondary);
-            margin: 0 auto;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 1px;
-            background: var(--accent);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -0.5px;
-        }
-
-        .timeline-item {
-            padding: 20px 0;
-            position: relative;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-            padding-right: 60px;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            padding-left: 60px;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 12px;
-            height: 12px;
-            right: -6px;
-            background: var(--secondary);
-            border-radius: 50%;
-            top: 30px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -6px;
-        }
-
-        .time {
-            display: block;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-
-        .event-content {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-        }
-
-        .event-content h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-        }
-
-        .music-note {
-            display: block;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: #888;
-            font-style: italic;
-            text-align: center;
-        }
-
-        /* Gallery Collage */
-        .gallery-collage {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 50px;
-        }
-
-        .collage-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            transition: transform 0.4s ease;
-            height: 500px;
-        }
-
-        .collage-item:hover {
-            transform: scale(1.02);
-            z-index: 2;
-        }
-
-        .collage-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .collage-item.full-width {
-            grid-column: span 2;
-            height: 300px;
-            background: var(--white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .collage-item.full-width img {
-            width: auto;
-            max-width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
-        }
-
-        /* Menu Section */
-        .menu-container {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .menu-card {
-            flex: 1;
-            min-width: 300px;
-            background: var(--white);
-            padding: 50px;
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .menu-card::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            bottom: 20px;
-            border: 1px solid var(--accent);
-            pointer-events: none;
-        }
-
-        .menu-card h3 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .menu-list {
-            list-style: none;
-        }
-
-        .menu-list li {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .menu-list li strong {
-            display: block;
-            color: var(--secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .pairing-footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--accent);
-            text-align: center;
-            font-style: italic;
-            color: #555;
-        }
-
-        /* Logistics Overlay */
-        .logistics-bar {
-            background: var(--white);
-            color: var(--primary);
-            padding: 80px 0;
-            border-top: 1px solid var(--accent);
-        }
-
-        .logistics-flex {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .log-item h4 {
-            font-family: 'Outfit', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        .log-item p {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        @media (max-width: 900px) {
-            .timeline::before { left: 20px; }
-            .timeline-item { width: 100%; left: 0 !important; padding-left: 50px !important; padding-right: 0 !important; text-align: left !important; }
-            .timeline-item::after { left: 14px !important; }
-            .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .item-1, .item-2, .item-3, .item-4 { grid-column: span 1; height: 300px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css?v=1.2">
 </head>
 <body>
 
-    <section class="hero">
-        <p>Nuestra Boda</p>
-        <h1>Silvina & Martin</h1>
-        <div class="date">05 de Diciembre, 2026</div>
-    </section>
-
-    <div class="container">
-        <section id="intro">
-            <div class="section-title">
-                <h2>Bienvenidos a nuestra casa</h2>
-                <div class="divider"></div>
-            </div>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; font-weight: 300; line-height: 1.6; color: #444;">
-                    En este rincón de Trevelin, entre los viñedos y el silencio de la montaña, los esperamos para celebrar su historia. Queremos que vivan una experiencia auténtica y relajada, rodeados de la naturaleza que tanto amamos y con la calidez de siempre.
-                </p>
-            </div>
-        </section>
-
-        <section id="moments">
-            <div class="section-title">
-                <h2>Momentos Compartidos</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <span class="time">17:30</span>
-                    <div class="event-content">
-                        <img src="img1.jpeg" class="timeline-content-img" alt="Bienvenida">
-                        <h3>La Bienvenida</h3>
-                        <p>Recibimiento en los jardines principales. Un primer encuentro con la serenidad y el espíritu del lugar.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">18:00</span>
-                    <div class="event-content">
-                        <img src="img2.jpeg" class="timeline-content-img" alt="Ceremonia">
-                        <h3>El Sí, Quiero</h3>
-                        <p>Una unión rodeada de vida y naturaleza. Ambientación orgánica con bancos de madera y flores de estación.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">19:00</span>
-                    <div class="event-content">
-                        <img src="img3.jpeg" class="timeline-content-img" alt="Cóctel">
-                        <h3>Brindis al Atardecer</h3>
-                        <p>Los acordes de violín y violonchelo darán un toque contemporáneo con versiones de <strong>Coldplay</strong> y clásicos modernos.</p>
-                        <span class="music-note">♫ Recomendación: "Viva la Vida" & "Yellow" para el brindis inicial.</span>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">20:00</span>
-                    <div class="event-content">
-                        <img src="img4.png" class="timeline-content-img" alt="Cena">
-                        <h3>Nuestros Sabores</h3>
-                        <p>Cena por pasos inspirada en nuestra huerta orgánica. Un viaje gastronómico maridado con la pureza de nuestros vinos de clima frío.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">21:00</span>
-                    <div class="event-content">
-                        <img src="img5.jpeg" class="timeline-content-img" alt="Baile">
-                        <h3>Música & Baile</h3>
-                        <p>Apertura de pista con el vals. Continua la celebración acompañados por sus seres más queridos.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">21:30</span>
-                    <div class="event-content">
-                        <img src="img6.jpeg" class="timeline-content-img" alt="Mesa Dulce">
-                        <h3>Mesa Dulce & Torta</h3>
-                        <p>Una selección de pastelería y el tradicional corte de torta, acompañados por la elegancia de nuestros espumantes.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="time">22:00</span>
-                    <div class="event-content">
-                        <h3>Brindis Final</h3>
-                        <p>El cierre de una noche mágica con nuestros vinos de Casa Yagüe.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="visuals">
-            <div class="section-title">
-                <h2>El Escenario</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="gallery-collage">
-                <div class="collage-item">
-                    <img src="img7.jpg" alt="Viñedo">
-                </div>
-                <div class="collage-item">
-                    <img src="img8.jpeg" alt="Salón">
-                </div>
-                <div class="collage-item full-width">
-                    <img src="img9.png" alt="Nuestros Vinos">
-                </div>
-            </div>
-        </section>
-
-        <section id="menu">
-            <div class="section-title">
-                <h2>Propuesta Gastronómica</h2>
-                <div class="divider"></div>
-            </div>
-            <div class="menu-container">
-                <div class="menu-card">
-                    <h3>Recepción</h3>
-                    <ul class="menu-list">
-                        <li>Focaccias artesanales & Dips de la huerta</li>
-                        <li>Tabla de quesos locales, frutas & frutos secos</li>
-                        <li>Bruschettas de temporada & Carpaccio de lomo</li>
-                        <li>Albóndigas caseras & Aceitunas marinadas</li>
-                        <li><strong>Bebidas:</strong> 3 Tragos de Autor, Variedad Sin Alcohol & Vinos de la Bodega</li>
-                    </ul>
-                </div>
-                <div class="menu-card">
-                    <h3>Cena & Brindis</h3>
-                    <ul class="menu-list">
-                        <li><strong>Primer Paso:</strong> Ensalada fresca & Carpaccio de vegetales</li>
-                        <li><strong>Plato Principal:</strong> Carne braseada con papas cuña & vegetales asados</li>
-                        <li><strong>Mesa Dulce:</strong> Variedad de pastelería & Torta de Bodas</li>
-                    </ul>
-                    <div class="pairing-footer">Maridaje con Vinos & Espumantes Casa Yagüe, Café & Té y Bebidas sin alcohol</div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section class="logistics-bar">
-        <div class="container">
-            <div class="logistics-flex">
-                <div class="log-item">
-                    <h4>Invitados</h4>
-                    <p>60 Invitados</p>
-                </div>
-                <div class="log-item">
-                    <h4>Ubicación</h4>
-                    <p>Jardines & Sala de Tasting</p>
-                </div>
-                <div class="log-item">
-                    <h4>Horario</h4>
-                    <p>18:00 — 01:00 hs</p>
-                </div>
+    <!-- Hero Banner -->
+    <header class="hero-banner" style="background-image: url('portada.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-eyebrow fade-in">CASA YAGÜE &bull; PATAGONIA</span>
+            <h1 class="hero-title fade-in">Silvina & Martín</h1>
+            <p class="hero-subtitle fade-in">Una Boda Íntima</p>
+            <div class="hero-date fade-in">05 &bull; DIC &bull; 2026</div>
+            <div class="scroll-arrow fade-in">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1" fill="none">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
             </div>
         </div>
-    </section>
+    </header>
 
-    <footer style="padding: 100px 0; text-align: center; background: #fff;">
-        <img src="logo.jpg" alt="Casa Yagüe" style="width: 250px; margin-bottom: 30px;">
-        <p style="color: #999; font-size: 0.9rem; letter-spacing: 2px;">TREVELIN · PATAGONIA · ARGENTINA</p>
+    <!-- Content Wrapper -->
+    <main class="main-container">
+
+        <!-- Intro Editorial Section -->
+        <section class="editorial-intro">
+            <div class="wrapper text-center">
+                <h2 class="section-title italic fade-in">El lugar donde todo cobra sentido</h2>
+                <div class="accent-divider fade-in"></div>
+                <div class="intro-block fade-in">
+                    <p class="serif-lead">
+                        Hay lugares que te reciben y lugares que te abrazan.
+                    </p>
+                    <p class="body-text">
+                        Casa Yagüe es un proyecto familiar que nació y creció con la convicción de que cada persona que llega merece sentirse cuidada, bienvenida y parte de algo especial.
+                    </p>
+                    <p class="body-text">
+                        Una boda no es un evento. Es una experiencia que se recuerda toda la vida. Y en Casa Yagüe, nos ocupamos de que cada detalle esté pensado para que así sea.
+                    </p>
+                    <p class="body-text">
+                        Desde el primer momento en que los invitados lleguen hasta el último brindis de la noche, habrá un equipo detrás de cada detalle, invisible pero presente, para que los novios y sus seres queridos solo tengan que dejarse llevar y vivir este momento especial.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Symmetrical Collage Section (Inspired by modelo.jpeg / table.jpeg) -->
+        <section class="collage-section">
+            <div class="wrapper">
+                <div class="text-center">
+                    <h2 class="section-title fade-in">El Escenario</h2>
+                    <div class="accent-divider fade-in"></div>
+                </div>
+                
+                <!-- Asymmetrical Masonry Grid (Collage style) -->
+                <div class="masonry-collage">
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="hero.jpg" alt="Vista del Lugar">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="copa.jpeg" alt="Copa de Vino">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="vinedo.jpg" alt="Viñedos">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="menu.png" alt="Menú de Bodas">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="entrada.jpeg" alt="Entrada Principal">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="salon.jpeg" alt="Salón Preparado">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="lugar.jpg" alt="Paisaje de la Finca">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="torta 2.jpeg" alt="Torta de Boda">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="altar.jpeg" alt="Altar de la Ceremonia">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="brindis.jpeg" alt="Brindis de los Novios">
+                    </div>
+                    
+                    <div class="masonry-item fade-in">
+                        <img src="recepcion.jpeg" alt="Recepción">
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Wedding Experience Timeline (Without hours, using provided text) -->
+        <section class="timeline-section">
+            <div class="wrapper">
+                <div class="text-center">
+                    <h2 class="section-title fade-in">La Experiencia</h2>
+                    <div class="accent-divider fade-in"></div>
+                </div>
+
+                <div class="timeline-container">
+                    
+                    <!-- Timeline Line -->
+                    <div class="timeline-line"></div>
+                    
+                    <!-- Moment 1: BIENVENIDA -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>BIENVENIDA</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p>
+                                Desde el primer instante en que los invitados cruzan la entrada de Casa Yagüe, el equipo estará listo para recibirlos y dar inicio a los primeros momentos de la boda.
+                            </p>
+                            <p>
+                                Cada persona será bienvenida y guiada hacia el jardín exterior, que será el telón de fondo de una recepción pensada para disfrutar desde el primer momento.
+                            </p>
+                            <p>
+                                Los invitados son recibidos con una copa de bienvenida de nuestro menú de cocteles pensados exclusivamente para la boda.
+                            </p>
+                            <p>
+                                En una atmosfera distendida vamos a conducir a todos los invitados a sentarse en el sector de la ceremonia.
+                            </p>
+                            <p>
+                                Mientras los invitados se acomodan, se reencuentran y empiezan a sentir la magia del entorno, dos músicos en vivo —violín y violonchelo, interpretarán versiones de clásicos modernos, creando así una atmosfera relajada, donde la música acompañe estos momentos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Moment 2: LA CEREMONIA -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>LA CEREMONIA</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p class="italic-quote">
+                                Un momento que no necesita nada más que ser vivido.
+                            </p>
+                            <p>
+                                Con la luz del atardecer, llegará el momento más esperado, y que dará lugar en nuestro jardín exterior, frente al viñedo, y donde todos sus seres queridos los acompañaran en el momento en que se miren a los ojos y elijan, una vez más, estar juntos para siempre.
+                            </p>
+                            <p>
+                                La música en vivo también acompañará este momento: desde la entrada de la novia, con esas primeras notas que detienen el tiempo, hasta el último acorde que cierra la ceremonia.
+                            </p>
+                            <p>
+                                Piezas elegidas con cuidado, pensadas para que la música sea parte del recuerdo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Moment 3: LA RECEPCION -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>LA RECEPCION</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p>
+                                Con la ceremonia concluida y el sol terminando de caer sobre los viñedos, los invitados podrán seguir disfrutando del día nuestro jardín mientras se da inicio a la recepción. Un momento de transición natural, donde la emoción de lo vivido se festeja entre diferentes cócteles, y una selección de bocados pensados para compartir.
+                            </p>
+                            <p>
+                                La música seguirá acompañando el ambiente con la misma calidez con la que empezó la noche. El jardín, ahora bañado por la última luz del día, se convierte en el escenario perfecto para los primeros festejos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Moment 4: LA CENA -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>LA CENA</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p>
+                                Concluida la ceremonia, los invitados serán invitados a ingresar al Salón de Tasting de Casa Yagüe.
+                            </p>
+                            <p>
+                                Cada persona encontrará su lugar asignado y será atendida por un equipo de mozos que asistirán tanto las mesas como la barra, garantizando que nada falte en ningún momento.
+                            </p>
+                            <p>
+                                La cena no es solo el momento de comer: es el espacio donde las conversaciones se alargan, y la noche empieza a tomar su propio ritmo.
+                            </p>
+                            <p>
+                                El equipo acompañará cada momento de la noche con la atención y el cuidado que merece este momento.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Moment 5: LOS INSTANTES QUE NO SE OLVIDAN -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>INSTANTES QUE NO SE OLVIDAN</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p>
+                                Durante y después de la cena, el DJ se encargará de que la atmósfera de la noche siga viva, con una selección tranquila y envolvente, pensada para que la música sea el fondo perfecto de cada conversación y cada abrazo.
+                            </p>
+                            <p>
+                                Los novios tendrán tiempo para estar con sus personas más queridas, para esas fotos que no se piden, sino que suceden, para los abrazos largos y las risas.
+                            </p>
+                            <p>
+                                Y entre todo eso, habrá un regalo que ningún invitado olvidará: un artista trabajará en acuarela, retratando a cada persona presente. Ese retrato será el recuerdo tangible de la noche.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Moment 6: TORTA Y BRINDIS -->
+                    <div class="timeline-item fade-in">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h3>TORTA Y BRINDIS</h3>
+                            <div class="separator-dots">— ✦ —</div>
+                            <p>
+                                Toda noche perfecta tiene su momento cúlmine.
+                            </p>
+                            <p>
+                                En esta boda, ese momento llegará con el corte de la torta y el brindis.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Gastronomy & Menu Section -->
+        <section class="gastronomy-section">
+            <div class="wrapper">
+                <div class="text-center">
+                    <h2 class="section-title fade-in">Propuesta Gastronómica</h2>
+                    <div class="accent-divider fade-in"></div>
+                </div>
+
+                <!-- Two Menu Cards Layout -->
+                <div class="menu-cards-wrapper">
+                    
+                    <!-- RECEPTION MENU -->
+                    <div class="menu-single-container fade-in">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-border"></div>
+                            <h3 class="menu-card-title">Menú de Recepción</h3>
+                            <div class="menu-card-divider">— ✦ —</div>
+                            
+                            <ul class="refined-menu-list">
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Panes & Focaccias</span>
+                                    </div>
+                                    <p class="menu-item-desc">Elaboración artesanal con hierbas de nuestra huerta.</p>
+                                </li>
+                                
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Tabla de Quesos</span>
+                                    </div>
+                                    <p class="menu-item-desc">Quesos locales seleccionados.</p>
+                                </li>
+                                
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Bruschettas</span>
+                                    </div>
+                                    <p class="menu-item-desc">Selección especial del chef.</p>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Carpacchio</span>
+                                    </div>
+                                    <p class="menu-item-desc">Carpacchio de lomo.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- DINNER MENU -->
+                    <div class="menu-single-container fade-in">
+                        <div class="menu-card-inner">
+                            <div class="menu-card-border"></div>
+                            <h3 class="menu-card-title">Menú de Cena</h3>
+                            <div class="menu-card-divider">— ✦ —</div>
+                            
+                            <ul class="refined-menu-list">
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Entrada</span>
+                                    </div>
+                                    <p class="menu-item-desc">Ensaladas crujientes de la huerta y carpaccio de vegetales de estación.</p>
+                                </li>
+                                
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Plato Principal</span>
+                                    </div>
+                                    <p class="menu-item-desc">Carne braseada al horno de leña, papas cuña y vegetales asados.</p>
+                                </li>
+                                
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Opción Veggie</span>
+                                    </div>
+                                    <p class="menu-item-desc">Arroz cremoso con vegetales frescos seleccionados de la huerta.</p>
+                                </li>
+                                
+                                <li>
+                                    <div class="menu-item-header">
+                                        <span class="menu-item-title">Postre</span>
+                                    </div>
+                                    <p class="menu-item-desc">Pavlova de frutos rojos frescos.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Wine Pairing Note -->
+                <div class="pairing-note text-center fade-in">
+                    <span class="pairing-title">MARIDAJE & EXCLUSIVIDAD</span>
+                    <p>
+                        Toda la propuesta gastronómica se acompaña de una selección exclusiva de vinos tintos, blancos y espumantes de <strong>Casa Yagüe</strong>, además de jugos naturales y aguas infusionadas de nuestra huerta.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Message Section -->
+        <section class="final-editorial">
+            <div class="wrapper text-center">
+                <div class="final-quote-block fade-in">
+                    <p class="final-quote">
+                        "En Casa Yagüe, los novios y sus invitados se irán con algo que va más allá de los recuerdos de una noche: se irán con la certeza de haber estado exactamente donde tenían que estar, rodeados de las personas correctas."
+                    </p>
+                    <div class="accent-divider"></div>
+                    <span class="brand-signature">CASA YAGÜE</span>
+                    <span class="brand-tagline">Cada detalle, pensado para vos.</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" style="padding: 3rem 0; background-color: var(--color-primary); color: var(--color-white);">
+        <div class="wrapper text-center">
+            <p class="copyright" style="font-family: var(--font-sans); font-size: 0.9rem; font-weight: 300; letter-spacing: 1px;">&copy; 2026 Casa Yagüe. Propuesta de Experiencia para Silvina & Martín.</p>
+        </div>
     </footer>
 
-    <script>
-        // Intersection Observer for reveal effect
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    <!-- Floating Audio Player -->
+    <div class="music-player">
+        <audio id="bg-music" loop src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/12/ca/3d/12ca3d34-93d8-57d2-16b6-e6976799074c/mzaf_2890848888390834600.plus.aac.p.m4a" preload="auto"></audio>
+        <button id="music-btn" class="music-btn" title="Reproducir música">
+            <svg id="icon-play" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <svg id="icon-pause" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+        </button>
+    </div>
 
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            observer.observe(item);
+    <!-- Animations script -->
+    <script src="script.js?v=1.4"></script>
+    <script>
+        // Music Player Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('music-btn');
+            const iconPlay = document.getElementById('icon-play');
+            const iconPause = document.getElementById('icon-pause');
+            let isPlaying = false;
+
+            // Reduce volume for a pleasant background experience
+            audio.volume = 0.5;
+
+            btn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    iconPlay.style.display = 'block';
+                    iconPause.style.display = 'none';
+                } else {
+                    audio.play().catch(e => console.log("Audio play failed:", e));
+                    iconPlay.style.display = 'none';
+                    iconPause.style.display = 'block';
+                }
+                isPlaying = !isPlaying;
+            });
         });
     </script>
 </body>
